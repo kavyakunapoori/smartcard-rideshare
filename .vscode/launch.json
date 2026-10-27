@@ -1,0 +1,39 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot - SmartCarpoolApplication",
+      "request": "launch",
+      "mainClass": "com.smartcarpool.system.SmartCarpoolApplication",
+      "projectName": "smart-carpool-backend",
+      "cwd": "${workspaceFolder}/backend",
+      "envFile": "${workspaceFolder}/backend/.env"
+    },
+    {
+      "name": "Frontend - Chrome",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/frontend/src",
+      "preLaunchTask": "Run Frontend (Vite)"
+    },
+    {
+      "name": "Frontend - Edge",
+      "type": "msedge",
+      "request": "launch",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/frontend/src",
+      "preLaunchTask": "Run Frontend (Vite)"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Full Stack (Backend + Frontend in Chrome)",
+      "configurations": [
+        "Spring Boot - SmartCarpoolApplication",
+        "Frontend - Chrome"
+      ]
+    }
+  ]
+}
